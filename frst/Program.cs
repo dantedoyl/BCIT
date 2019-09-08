@@ -10,8 +10,15 @@ namespace frst
     {
         static void Main(string[] args)
         {
-            int a = 7;
-            Console.Write(a);
-        }
+            double A, B, C;
+            Console.WriteLine("Введите значение первого коэффициента:");
+            string a = Console.ReadLine();
+            while (Double.TryParse(a, out A) == false)
+            {
+                Console.WriteLine("Некорректный ввод. Повторите: ");
+                a = Console.ReadLine();
+            }
+
+            }
     }
 }

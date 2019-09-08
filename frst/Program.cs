@@ -10,6 +10,8 @@ namespace frst
     {
         static void Main(string[] args)
         {
+            int a = 7;
+            Console.Write(a);
         }
     }
 }

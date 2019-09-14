@@ -10,6 +10,7 @@ namespace frst
     {
         static void Main(string[] args)
         {
+            Console.Title = "Торжков Максим ИУ5-31Б";
             double A, B, C;
             string answ = "y";
             while (answ == "y")
@@ -36,14 +37,21 @@ namespace frst
                     c = Console.ReadLine();
                 }
                 if ((A == 0) && (B == 0) && (C == 0))
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Корень уравнения - любое число.");
+                }
                 else if ((C != 0) && (B == 0) && (A == 0))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Нет решений.");
+                }
                 else
                 {
                     double D = B * B - 4 * A * C;
                     if (D < 0)
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Дискрименант меньше нуля. Для повтора ввода введите 'y'");
                         answ = Console.ReadLine();
                     }
@@ -53,11 +61,13 @@ namespace frst
                         double Y = ((-1 * B) + Math.Sqrt(D)) / (2 * A);
                         if ((X < 0) && (Y < 0))
                         {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Уравнение не имеет рациональных корней. Для повтора ввода введите 'y'");
                             answ = Console.ReadLine();
                         }
                         else
                         {
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Корни уравнения:");
                             if (X > 0)
                             {
@@ -75,11 +85,13 @@ namespace frst
                             }
                             else if ((Y == 0) && (X != Y))
                                 Console.WriteLine(Y);
-                            Console.WriteLine("Для повтора ввода введите 'y'");
-                            answ = Console.ReadLine();
+                            
                         }
                     }
                 }
+                Console.WriteLine("Для повтора ввода введите 'y'");
+                answ = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.;
             }
         }
     }

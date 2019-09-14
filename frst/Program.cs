@@ -39,12 +39,43 @@ namespace frst
                 if ((A == 0) && (B == 0) && (C == 0))
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Корень уравнения - любое число.");
+                    Console.WriteLine("Корень уравнения - любое число.\nДля повторного ввода введите 'y'");
+                    answ = Console.ReadLine();
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
                 else if ((C != 0) && (B == 0) && (A == 0))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Нет решений.");
+                    Console.WriteLine("Нет решений.\nДля повторного ввода введите 'y'");
+                    answ = Console.ReadLine();
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                else if ((B != 0) && (A == 0))
+                {
+                    double X = -C / B;
+                    if (X < 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Уравнение не имеет рациональных корней. Для повтора ввода введите 'y'");
+                        answ = Console.ReadLine();
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    else if (X == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Корни уравнения:\n0");
+                        Console.WriteLine("Для повтора ввода введите 'y'");
+                        answ = Console.ReadLine();
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Корни уравнения:\n{0}\n{1}", Math.Sqrt(X), -Math.Sqrt(X));
+                        Console.WriteLine("Для повтора ввода введите 'y'");
+                        answ = Console.ReadLine();
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
                 }
                 else
                 {
@@ -52,8 +83,9 @@ namespace frst
                     if (D < 0)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Дискрименант меньше нуля. Для повтора ввода введите 'y'");
+                        Console.WriteLine("Дискрименант меньше нуля. Уравнение не имеет рациональных корней. Для повтора ввода введите 'y'");
                         answ = Console.ReadLine();
+                        Console.ForegroundColor = ConsoleColor.White;
                     }
                     else
                     {
@@ -85,13 +117,13 @@ namespace frst
                             }
                             else if ((Y == 0) && (X != Y))
                                 Console.WriteLine(Y);
-                            
+                            Console.WriteLine("Для повтора ввода введите 'y'");
+                            answ = Console.ReadLine();
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
                     }
                 }
-                Console.WriteLine("Для повтора ввода введите 'y'");
-                answ = Console.ReadLine();
-                Console.ForegroundColor = ConsoleColor.;
+                
             }
         }
     }

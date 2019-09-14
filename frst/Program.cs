@@ -35,41 +35,49 @@ namespace frst
                     Console.WriteLine("Некорректный ввод. Повторите: ");
                     c = Console.ReadLine();
                 }
-                double D = B * B - 4 * A * C;
-                if (D < 0)
-                {
-                    Console.WriteLine("Дискрименант меньше нуля. Для повтора ввода введите 'y'");
-                    answ = Console.ReadLine();
-                }
+                if ((A == 0) && (B == 0) && (C == 0))
+                    Console.WriteLine("Корень уравнения - любое число.");
+                else if ((C != 0) && (B == 0) && (A == 0))
+                    Console.WriteLine("Нет решений.");
                 else
                 {
-                    double X = ((-1 * B) - Math.Sqrt(D)) / (2 * A);
-                    double Y = ((-1 * B) + Math.Sqrt(D)) / (2 * A);
-                    if ((X < 0) && (Y < 0)) {
-                        Console.WriteLine("Уравнение не имеет рациональных корней. Для повтора ввода введите 'y'");
+                    double D = B * B - 4 * A * C;
+                    if (D < 0)
+                    {
+                        Console.WriteLine("Дискрименант меньше нуля. Для повтора ввода введите 'y'");
                         answ = Console.ReadLine();
                     }
                     else
                     {
-                        Console.WriteLine("Корни уравнения:");
-                        if (X > 0)
+                        double X = ((-1 * B) - Math.Sqrt(D)) / (2 * A);
+                        double Y = ((-1 * B) + Math.Sqrt(D)) / (2 * A);
+                        if ((X < 0) && (Y < 0))
                         {
-                            double X_1 = Math.Sqrt(X);
-                            double X_2 = -1 * X_1;
-                            Console.WriteLine("{0} {1}",X_1,X_2);
+                            Console.WriteLine("Уравнение не имеет рациональных корней. Для повтора ввода введите 'y'");
+                            answ = Console.ReadLine();
                         }
-                        else if (X == 0)
-                            Console.WriteLine(X);
-                        if ((Y > 0)&&(X!=Y))
+                        else
                         {
-                            double Y_1 = Math.Sqrt(Y);
-                            double Y_2 = -1 * Y_1;
-                            Console.WriteLine("{0} {1}", Y_1, Y_2);
+                            Console.WriteLine("Корни уравнения:");
+                            if (X > 0)
+                            {
+                                double X_1 = Math.Sqrt(X);
+                                double X_2 = -1 * X_1;
+                                Console.WriteLine("{0} {1}", X_1, X_2);
+                            }
+                            else if (X == 0)
+                                Console.WriteLine(X);
+                            if ((Y > 0) && (X != Y))
+                            {
+                                double Y_1 = Math.Sqrt(Y);
+                                double Y_2 = -1 * Y_1;
+                                Console.WriteLine("{0} {1}", Y_1, Y_2);
+                            }
+                            else if ((Y == 0) && (X != Y))
+                                Console.WriteLine(Y);
+                            Console.WriteLine("Для повтора ввода введите 'y'");
+                            answ = Console.ReadLine();
                         }
-                        else if ((Y == 0)&& (X != Y))
-                            Console.WriteLine(Y);
-                        Console.WriteLine("Для повтора ввода введите 'y'");
-                        answ = Console.ReadLine();
                     }
                 }
             }

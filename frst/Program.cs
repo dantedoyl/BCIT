@@ -12,30 +12,52 @@ namespace frst
         {
             Console.Title = "Торжков Максим ИУ5-31Б";
             double A, B, C;
+            string a, b, c;
             string answ = "y";
             while (answ == "y")
             {
-                Console.WriteLine("Введите значение первого коэффициента:");
-                string a = Console.ReadLine();
+                if (args.Length >= 1)
+                {
+                    a = args[0];
+                }
+                else
+                {
+                    Console.WriteLine("Введите значение первого коэффициента:");
+                    a = Console.ReadLine();
+                }
                 while (Double.TryParse(a, out A) == false)
                 {
                     Console.WriteLine("Некорректный ввод. Повторите: ");
                     a = Console.ReadLine();
                 }
-                Console.WriteLine("Введите значение второго коэффициента:");
-                string b = Console.ReadLine();
+                if (args.Length >= 2) {
+                    b = args[1];
+                }
+                else
+                {
+                    Console.WriteLine("Введите значение второго коэффициента:");
+                    b = Console.ReadLine();
+                }
                 while (Double.TryParse(b, out B) == false)
                 {
                     Console.WriteLine("Некорректный ввод. Повторите: ");
                     b = Console.ReadLine();
                 }
-                Console.WriteLine("Введите значение третьего коэффициента:");
-                string c = Console.ReadLine();
+                if (args.Length >= 3) {
+                    c = args[2];
+                }
+                else
+                {
+                    Console.WriteLine("Введите значение третьего коэффициента:");
+                    c = Console.ReadLine();
+                }
                 while (Double.TryParse(c, out C) == false)
                 {
                     Console.WriteLine("Некорректный ввод. Повторите: ");
                     c = Console.ReadLine();
                 }
+
+
                 if ((A == 0) && (B == 0) && (C == 0))
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
@@ -124,7 +146,10 @@ namespace frst
                     }
                 }
                 
+               
+                }
             }
+            
         }
     }
-}
+

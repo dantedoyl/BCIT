@@ -16,7 +16,7 @@ namespace frst
             string answ = "y";
             while (answ == "y")
             {
-                if (args.Length >= 1)
+                if ((args != null)&&(args.Length>=1))
                 {
                     a = args[0];
                 }
@@ -30,7 +30,7 @@ namespace frst
                     Console.WriteLine("Некорректный ввод. Повторите: ");
                     a = Console.ReadLine();
                 }
-                if (args.Length >= 2) {
+                if ((args != null)&& (args.Length >= 2)) {
                     b = args[1];
                 }
                 else
@@ -43,7 +43,7 @@ namespace frst
                     Console.WriteLine("Некорректный ввод. Повторите: ");
                     b = Console.ReadLine();
                 }
-                if (args.Length >= 3) {
+                if ((args != null)&& (args.Length >= 3)) {
                     c = args[2];
                 }
                 else
@@ -145,8 +145,8 @@ namespace frst
                         }
                     }
                 }
-                
-               
+                args = null;
+               // Array.Clear(args, 0, args.Length);
                 }
             }
             

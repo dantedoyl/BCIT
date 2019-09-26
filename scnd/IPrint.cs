@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace scnd
 {
     //....Интерфейс Iprint....
-    interface IPrint
+    public interface IPrint
     {
         void Print();
     }

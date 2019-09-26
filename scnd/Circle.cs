@@ -8,7 +8,7 @@ namespace scnd
 {
 
     //....Класс Круг....
-    class Circle : Geom_Figure, IPrint
+    public class Circle : Geom_Figure, IPrint
     {
         public double radius { get; set; }
 

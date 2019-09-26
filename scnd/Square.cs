@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace scnd
 {
     //...Класс Квадрат...
-    class Square : Rectangle, IPrint
+    public class Square : Rectangle, IPrint
     {
         public Square(double a) : base(a, a)
         {

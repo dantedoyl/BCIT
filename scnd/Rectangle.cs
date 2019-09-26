@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace scnd
 {
     //....Класс Прямоугольник....
-    class Rectangle : Geom_Figure, IPrint
+    public class Rectangle : Geom_Figure, IPrint
     {
         public double lngth { get; set; }
         public double wdth { get; set; }

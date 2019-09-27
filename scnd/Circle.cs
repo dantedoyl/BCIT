@@ -30,5 +30,14 @@ namespace scnd
         {
             Console.WriteLine("Круг:\n" + ToString());
         }
+
+        public override int CompareTo(object obj)
+        {
+            Geom_Figure p = (Geom_Figure)obj;
+            if (this.Area() > p.Area()) { return 1; }
+            else if (this.Area() < p.Area()) { return -1; }
+            else if (this.Area() == p.Area()) { return 0; }
+            else { throw new NotImplementedException(); }
+        }
     }
 }

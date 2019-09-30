@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace scnd
 {
     //....Класс Прямоугольник....
-    public class Rectangle : Geom_Figure, IPrint
+    public class Rectangle : Geom_Figure
     {
         public double lngth { get; set; }
         public double wdth { get; set; }
@@ -27,7 +27,7 @@ namespace scnd
         {
             return "Длина: " + lngth.ToString() + '\n' + "Ширина: " + wdth.ToString() + '\n' + "Площадь: " + Area().ToString() + '\n';
         }
-        public void Print()
+        public override void Print()
         {
             Console.WriteLine("Прямоугольник:\n" + ToString());
         }

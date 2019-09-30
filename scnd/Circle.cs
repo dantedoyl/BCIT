@@ -8,7 +8,7 @@ namespace scnd
 {
 
     //....Класс Круг....
-    public class Circle : Geom_Figure, IPrint
+    public class Circle : Geom_Figure
     {
         public double radius { get; set; }
 
@@ -26,7 +26,7 @@ namespace scnd
             return "Радиус: " + radius.ToString() + '\n' + "Площадь: " + Area().ToString() + '\n';
         }
 
-        public void Print()
+        public override void Print()
         {
             Console.WriteLine("Круг:\n" + ToString());
         }

@@ -20,7 +20,7 @@ namespace scnd
             return "Длина стороны: " + lngth.ToString() + '\n' + "Площадь: " + Area().ToString() + '\n';
         }
 
-        public new void Print()
+        public override void Print()
         {
             Console.WriteLine("Квадрат:\n" + ToString());
         }

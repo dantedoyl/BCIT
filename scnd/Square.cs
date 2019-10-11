@@ -17,12 +17,12 @@ namespace scnd
 
         public override string ToString()
         {
-            return "Длина стороны: " + lngth.ToString() + '\n' + "Площадь: " + Area().ToString() + '\n';
+            return "Квадрат с площадью:" + Area().ToString();
         }
 
         public override void Print()
         {
-            Console.WriteLine("Квадрат:\n" + ToString());
+            Console.WriteLine(ToString());
         }
         public override int CompareTo(object obj)
         {

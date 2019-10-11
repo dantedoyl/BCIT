@@ -25,11 +25,11 @@ namespace scnd
 
         public override string ToString()
         {
-            return "Длина: " + lngth.ToString() + '\n' + "Ширина: " + wdth.ToString() + '\n' + "Площадь: " + Area().ToString() + '\n';
+            return "Прямоугольник с площадью:" + Area().ToString();
         }
         public override void Print()
         {
-            Console.WriteLine("Прямоугольник:\n" + ToString());
+            Console.WriteLine(ToString());
         }
         public override int CompareTo(object obj)
         {

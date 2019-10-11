@@ -23,12 +23,12 @@ namespace scnd
 
         public override string ToString()
         {
-            return "Радиус: " + radius.ToString() + '\n' + "Площадь: " + Area().ToString() + '\n';
+            return "Круг с площадью:" + Area().ToString();
         }
 
         public override void Print()
         {
-            Console.WriteLine("Круг:\n" + ToString());
+            Console.WriteLine(ToString());
         }
 
         public override int CompareTo(object obj)

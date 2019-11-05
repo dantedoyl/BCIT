@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using Lab_05;
 
 namespace Lab_04
 {
@@ -72,26 +73,34 @@ namespace Lab_04
             {
                 word = word.ToUpper();
                 List<string> res = new List<string>();
-                Stopwatch t = new Stopwatch();
-                t.Start();
-                foreach (string wrd in lst)
+                int maxdst;
+                if (!int.TryParse(this.textBoxDist.Text.Trim(), out maxdst))
                 {
-                    if (wrd.ToUpper().Contains(word))
+                    MessageBox.Show("Введены неверные данные.");
+                }
+                else
+                {
+                    Stopwatch t = new Stopwatch();
+                    t.Start();
+                    foreach (string wrd in lst)
                     {
-                        res.Add(wrd);
+                        int dst = Levenstain.Distance(wrd.ToUpper(), word);
+                        if ( dst <= maxdst)
+                        {
+                            res.Add(wrd);
+                        }
                     }
-                }
-                t.Stop();
-                this.textBoxTimeSearch.Text = t.Elapsed.ToString();
-                this.listBoxResult.BeginUpdate();
-                this.listBoxResult.Items.Clear();
+                    t.Stop();
+                    this.textBoxTimeSearch.Text = t.Elapsed.ToString();
+                    this.listBoxResult.BeginUpdate();
+                    this.listBoxResult.Items.Clear();
 
-                foreach(string wrd in res)
-                {
-                    this.listBoxResult.Items.Add(wrd);
+                    foreach (string wrd in res)
+                    {
+                        this.listBoxResult.Items.Add(wrd);
+                    }
+                    this.listBoxResult.EndUpdate();
                 }
-                this.listBoxResult.EndUpdate();
-
             }
             else
             {

@@ -38,6 +38,9 @@
             this.labelTimeSearch = new System.Windows.Forms.Label();
             this.textBoxTimeSearch = new System.Windows.Forms.TextBox();
             this.listBoxResult = new System.Windows.Forms.ListBox();
+            this.labelSearch = new System.Windows.Forms.Label();
+            this.labelDist = new System.Windows.Forms.Label();
+            this.textBoxDist = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -53,7 +56,7 @@
             // textBoxSearch
             // 
             this.textBoxSearch.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxSearch.Location = new System.Drawing.Point(383, 28);
+            this.textBoxSearch.Location = new System.Drawing.Point(503, 64);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearch.TabIndex = 1;
@@ -96,7 +99,7 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(528, 28);
+            this.buttonSearch.Location = new System.Drawing.Point(629, 60);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(75, 23);
             this.buttonSearch.TabIndex = 7;
@@ -107,16 +110,16 @@
             // labelTimeSearch
             // 
             this.labelTimeSearch.AutoSize = true;
-            this.labelTimeSearch.Location = new System.Drawing.Point(380, 80);
+            this.labelTimeSearch.Location = new System.Drawing.Point(411, 96);
             this.labelTimeSearch.Name = "labelTimeSearch";
-            this.labelTimeSearch.Size = new System.Drawing.Size(85, 13);
+            this.labelTimeSearch.Size = new System.Drawing.Size(88, 13);
             this.labelTimeSearch.TabIndex = 8;
-            this.labelTimeSearch.Text = "Веремя поиска";
+            this.labelTimeSearch.Text = "Веремя поиска:";
             this.labelTimeSearch.Click += new System.EventHandler(this.LabelTimeSearch_Click);
             // 
             // textBoxTimeSearch
             // 
-            this.textBoxTimeSearch.Location = new System.Drawing.Point(503, 77);
+            this.textBoxTimeSearch.Location = new System.Drawing.Point(505, 93);
             this.textBoxTimeSearch.Name = "textBoxTimeSearch";
             this.textBoxTimeSearch.ReadOnly = true;
             this.textBoxTimeSearch.Size = new System.Drawing.Size(100, 20);
@@ -132,11 +135,39 @@
             this.listBoxResult.Size = new System.Drawing.Size(220, 160);
             this.listBoxResult.TabIndex = 10;
             // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Location = new System.Drawing.Point(502, 44);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(101, 13);
+            this.labelSearch.TabIndex = 11;
+            this.labelSearch.Text = "Слово для поиска:";
+            // 
+            // labelDist
+            // 
+            this.labelDist.AutoSize = true;
+            this.labelDist.Location = new System.Drawing.Point(347, 44);
+            this.labelDist.Name = "labelDist";
+            this.labelDist.Size = new System.Drawing.Size(149, 13);
+            this.labelDist.TabIndex = 12;
+            this.labelDist.Text = "Максимальное расстояние:";
+            // 
+            // textBoxDist
+            // 
+            this.textBoxDist.Location = new System.Drawing.Point(350, 63);
+            this.textBoxDist.Name = "textBoxDist";
+            this.textBoxDist.Size = new System.Drawing.Size(146, 20);
+            this.textBoxDist.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxDist);
+            this.Controls.Add(this.labelDist);
+            this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.listBoxResult);
             this.Controls.Add(this.textBoxTimeSearch);
             this.Controls.Add(this.labelTimeSearch);
@@ -166,6 +197,9 @@
         private System.Windows.Forms.Label labelTimeSearch;
         private System.Windows.Forms.TextBox textBoxTimeSearch;
         private System.Windows.Forms.ListBox listBoxResult;
+        private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.Label labelDist;
+        private System.Windows.Forms.TextBox textBoxDist;
     }
 }
 
